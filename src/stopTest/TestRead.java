@@ -23,9 +23,23 @@ public class TestRead {
         TextRead myText = new TextRead();
         myText.textInput("Godmorgon!");
         myText.textInput("God kväll!");
+        myText.textInput("Hej hej hallå :)");
+        myText.textInput("Vad händer?");
 
         int actual = myText.amountOfLines();
-        int expected = 2;
+        int expected = 4;
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testLongestWord(){
+        TextRead myText = new TextRead();
+        myText.textInput("God kväll!");
+        myText.textInput("Godmorgon");
+        myText.textInput("    space    ");
+
+        String actual = myText.longestWord();
+        String expected = "Godmorgon";
 
         assertEquals(expected, actual);
     }

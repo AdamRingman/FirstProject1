@@ -35,11 +35,11 @@ public class TextRead {
     }
 
     public int amountOfWords() {
-        String trimText = text.trim();
+        String trimText = text.trim(); //.trim tar bort whitespace
         if (trimText.isEmpty()) {
             return 0;
         } else {
-            return trimText.split("\\s+").length;
+            return trimText.split("\\s+").length; // "\\s+" gör så att regexen väljer att splita orden
         }
     }
 
