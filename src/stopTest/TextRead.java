@@ -1,15 +1,20 @@
 package stopTest;
 
-import java.util.List;
-
 public class TextRead {
-        private String text = "";
-        private int amountOfLines = 0;
-        private int amountOfWords = 1;
-    public TextRead(List inputText){
+    private String text = "";
+    private int amountOfLines = 0;
+    private int amountOfWords = 1;
+    private Boolean active = true;
 
-        for (int i = 0; i < inputText.size(); i++) {
-            text += " " + inputText.get(i);
+    public boolean loopIsActive() {
+        return active;
+    }
+
+    public void textInput(String inputText) {
+        if (inputText.toLowerCase().equals("stop")) {
+            active = false;
+        } else {
+            text += " " + inputText;
             amountOfLines++;
         }
     }
@@ -21,25 +26,31 @@ public class TextRead {
     public int amountOfCharacters() {
         int characters = 0;
         for (int i = 0; i < text.length(); i++) {
-            int c = text.charAt(i);
-            if(c != 32){
+            int asciiNumber = text.charAt(i);
+            if (asciiNumber != 32) {
                 characters++;
             }
         }
         return characters;
     }
 
-    public int amountOfWords(){
-        for (int i = 0; i < text.length(); i++) {
-            int c = text.charAt(i);
-            if(c == 32){
-                amountOfWords++;
-            }
+    public int amountOfWords() {
+        String trimText = text.trim();
+        if (trimText.isEmpty()) {
+            return 0;
+        } else {
+            return trimText.split("\\s+").length;
         }
-        return amountOfWords;
     }
 
     public String longestWord() {
-        return "heylooo";
+        String longWord = "";
+        String[] word = text.split("\\s+");
+        for (int i = 0; i < word.length; i++) {
+            if(word[i].length() > longWord.length()){
+                longWord = word[i];
+            }
+        }
+        return longWord;
     }
 }
