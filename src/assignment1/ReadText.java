@@ -1,11 +1,11 @@
-package stopTest;
+package assignment1;
 
 import java.util.Scanner;
 
 public class ReadText {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        TextRead text = new TextRead();
+        TextCalculations text = new TextCalculations();
 
         while (text.loopIsActive()) {
             System.out.println("Write your text, type 'stop' when done");

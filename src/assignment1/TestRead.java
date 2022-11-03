@@ -1,7 +1,4 @@
-package stopTest;
-
-import java.util.ArrayList;
-import java.util.List;
+package assignment1;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
@@ -9,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class TestRead {
     @Test
     public void testCharacterCalculation(){
-        TextRead myText = new TextRead();
+        TextCalculations myText = new TextCalculations();
         myText.textInput("Godmorgon!");
         myText.textInput("God kväll!");
 
@@ -20,7 +17,7 @@ public class TestRead {
     }
     @Test
     public void testLineCalculation(){
-        TextRead myText = new TextRead();
+        TextCalculations myText = new TextCalculations();
         myText.textInput("Godmorgon!");
         myText.textInput("God kväll!");
         myText.textInput("Hej hej hallå :)");
@@ -33,7 +30,7 @@ public class TestRead {
     }
     @Test
     public void testLongestWord(){
-        TextRead myText = new TextRead();
+        TextCalculations myText = new TextCalculations();
         myText.textInput("God kväll!");
         myText.textInput("Godmorgon");
         myText.textInput("    space    ");

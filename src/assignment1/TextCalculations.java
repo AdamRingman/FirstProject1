@@ -1,6 +1,6 @@
-package stopTest;
+package assignment1;
 
-public class TextRead {
+public class TextCalculations {
     private String text = "";
     private int amountOfLines = 0;
     private int amountOfWords = 1;
@@ -35,11 +35,11 @@ public class TextRead {
     }
 
     public int amountOfWords() {
-        String trimText = text.trim(); //.trim tar bort whitespace
+        String trimText = text.trim(); //trim tar bort onödig whitespace
         if (trimText.isEmpty()) {
             return 0;
         } else {
-            return trimText.split("\\s+").length; // "\\s+" gör så att regexen väljer att splita orden
+            return trimText.split("\\s+").length; // "\\s+" gör så att regex väljer att splita vid whitespaces
         }
     }
 
