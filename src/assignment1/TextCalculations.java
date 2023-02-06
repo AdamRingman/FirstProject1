@@ -3,7 +3,6 @@ package assignment1;
 public class TextCalculations {
     private String text = "";
     private int amountOfLines = 0;
-    private int amountOfWords = 1;
     private Boolean active = true;
 
     public boolean loopIsActive() {
