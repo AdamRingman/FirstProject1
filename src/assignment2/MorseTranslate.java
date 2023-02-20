@@ -1,7 +1,5 @@
 package assignment2;
 
-import com.google.common.base.Ascii;
-
 import java.util.HashMap;
 
 public class MorseTranslate {
