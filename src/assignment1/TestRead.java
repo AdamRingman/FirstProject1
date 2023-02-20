@@ -1,11 +1,10 @@
 package assignment1;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TestRead {
     @Test
-    public void testCharacterCalculation(){
+    public void testCharacterCalculation() {
         TextCalculations myText = new TextCalculations();
         myText.textInput("Godmorgon!");
         myText.textInput("God kväll!");
@@ -15,8 +14,9 @@ public class TestRead {
 
         assertEquals(expected, actual);
     }
+
     @Test
-    public void testLineCalculation(){
+    public void testLineCalculation() {
         TextCalculations myText = new TextCalculations();
         myText.textInput("Godmorgon!");
         myText.textInput("God kväll!");
@@ -28,8 +28,9 @@ public class TestRead {
 
         assertEquals(expected, actual);
     }
+
     @Test
-    public void testLongestWord(){
+    public void testLongestWord() {
         TextCalculations myText = new TextCalculations();
         myText.textInput("God kväll!");
         myText.textInput("Godmorgon");

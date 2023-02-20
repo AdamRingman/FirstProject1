@@ -1,5 +1,7 @@
 package assignment2;
 
+import com.google.common.base.Ascii;
+
 import java.util.HashMap;
 
 public class MorseTranslate {
@@ -32,17 +34,20 @@ public class MorseTranslate {
         return activeProgram;
     }
 
-    public void setLoopIsActive() {
+    public void setLoopInactive() {
         activeProgram = false;
     }
 
     public String engToMorse(String text) {
+        Boolean containsFailedKey = false;
         String morseText = "";
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == ' ') {
                 morseText += " ";
-            } else {
+            } else if (englishToMorse.containsKey(text.charAt(i))) {
                 morseText += " " + englishToMorse.get(text.charAt(i));
+            } else if (!englishToMorse.containsKey(text.charAt(i))) {
+                throw new NullPointerException("Translation missing");
             }
         }
         return morseText;
@@ -54,10 +59,11 @@ public class MorseTranslate {
         for (int i = 0; i < morse.length; i++) {
             if (morse[i].equals("")) {
                 engText += " ";
-            } else {
+            } else if (morseToEnglish.containsKey(morse[i])) {
                 engText += morseToEnglish.get(morse[i]);
+            } else if (!morseToEnglish.containsKey(morse[i])) {
+                throw new NullPointerException();
             }
-            System.out.println(morse[i]);
         }
         return engText;
     }

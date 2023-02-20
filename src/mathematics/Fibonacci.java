@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args) {
+        char morse1 = '*';
+        char morse2 = '-';
+        int c = morse1;
+        int d = morse2;
 
+        System.out.println(c + " " + d);
 
         Scanner scan = new Scanner(System.in);
         int[] fibonacci = new int[40];
