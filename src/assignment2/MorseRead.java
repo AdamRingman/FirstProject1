@@ -1,6 +1,5 @@
 package assignment2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MorseRead {
